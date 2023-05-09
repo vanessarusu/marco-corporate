@@ -7,7 +7,7 @@
 
 #registrationForm form {
   label {
-    font-size: 15px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1.8px;
     font-weight: 700;
@@ -60,7 +60,7 @@
     clear: none;
     text-align: right;
     float: left;
-    width: 48%;
+    width: 33%;
     flex-wrap: wrap;
 
     &.clear {
@@ -111,6 +111,7 @@
 
     .inline-label {
       margin-right: 10px;
+      margin-bottom: 20px;
     }
   }
 }

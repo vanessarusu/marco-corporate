@@ -36,7 +36,7 @@ import splashPage from './splash-page';
 
     fs.init();
     cl.init();
-    sp.init();
+    // sp.init();
 
     document.querySelectorAll('.register-link').forEach(function(el) {
         el.addEventListener('click', function(e) {

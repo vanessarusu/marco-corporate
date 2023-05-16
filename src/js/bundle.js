@@ -32,7 +32,7 @@ import splashPage from './splash-page';
 
     const fs = formStyling();
     const cl = customLightbox();
-    const sp = splashPage();
+    // const sp = splashPage();
 
     fs.init();
     cl.init();

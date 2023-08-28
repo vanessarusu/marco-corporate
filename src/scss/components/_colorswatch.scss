@@ -1,28 +1,20 @@
 :root {
-    --brand-orange: #df854f;
-    --brand-blue: #243746;
-    --brand-black: #231f20;
-    --brand-brown: #403E3D;
-    --brand-green: #87C770;
-  }
+    --brand-teal: #7C8B8B;
+    --brand-teal-light: #A9BCBC;
+    --brand-black: #262525;
+    --brand-red: #E0181D;
+    --brand-gold: #868154;
+
+}
   
-  $brand-orange: #df854f;
-  $brand-blue: #243746;
-  $brand-black: #231f20;
-  $brand-brown: #403E3D;
-  $brand-green: #87C770;
+$brand-teal: #7C8B8B;
+$brand-teal-light: #A9BCBC;
+$brand-black: #262525;
+$brand-red: #E0181D;
+$brand-gold: #868154;
 
-
-  $black: var(--brand-black);
-$grey: #ECEDED;
-
-$orange: $brand-orange;
-$blue: $brand-blue;
+$black: var(--brand-black);
+$grey: #F0F2F2;
 $white: #fff;
-
-$maroon: $orange;
-$teal: $blue;
-
   
-  
-  $mobile: 768px;
+$mobile: 768px;

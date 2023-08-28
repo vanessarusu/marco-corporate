@@ -12,25 +12,15 @@ add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 
 function _woodside_assets() {
     wp_enqueue_style( '_woodside-admin-stylesheet', get_stylesheet_directory_uri() . '/dist/css/admin.css', array(), '1.0.0', 'all' );
-    wp_enqueue_style( '_adobe-fonts', 'https://use.typekit.net/ogb6bhl.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style( '_slick-stylesheet', get_stylesheet_directory_uri() . '/dist/css/slick.css' );
     wp_enqueue_style( '_woodside-stylesheet', get_stylesheet_directory_uri() . '/dist/css/bundle.css', array(), '1.0.0', 'all' );
-    wp_enqueue_script( '_gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', array(), '1.0.0', true );
+
+    // wp_enqueue_script( '_gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', array(), '1.0.0', true );
+    wp_enqueue_script( '_slick', get_stylesheet_directory_uri() . '/dist/js/slick.min.js' );
     wp_enqueue_script( '_woodside-scripts', get_stylesheet_directory_uri() . '/dist/js/bundle.js', array(), '1.0.0', true );
 }
 
-function load_custom_templates() {
-
-    // load splash page and lightbox if the builder is not open
-    // if ( ! isset( $_GET['fl_builder'] ) ) {
-    //     FLBuilder::render_query( array(
-    //         'post_type' => 'fl-theme-layout',
-    //         'p'         => 1402,
-    //     ) );
-    //     // FLBuilder::render_query( array(
-    //     //     'post_type' => 'fl-builder-template',
-    //     //     'p'         => 139
-    //     // ) );
-    // }  
+function load_custom_templates() { 
 }
 
 function my_global_builder_posts( $post_ids ) {
@@ -80,7 +70,7 @@ function wpse325327_add_excerpts_to_pages() {
 function my_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ophelia-logo.svg);
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/images/Mar-Co-Products-Logo.svg);
             height:105px;
             width:320px;
             background-size: contain;

@@ -11,46 +11,47 @@ import splashPage from './splash-page';
     var pageIds = {
         suites: "342",
         home: '2',
-        location: '302'
+        location: '302',
+        mixes: '7658'
     }
 
 
-    if(document.querySelector(`body.page-id-${pageIds.suites}`)) {
-        const sgl = suitesGridLightbox();
-        sgl.init();
-    }
+    // if(document.querySelector(`body.page-id-${pageIds.suites}`)) {
+    //     const sgl = suitesGridLightbox();
+    //     sgl.init();
+    // }
 
-    if(document.querySelector(`body.page-id-${pageIds.home}`)) {
+    // if(document.querySelector(`body.page-id-${pageIds.home}`)) {
+    //     const cs = customSlider();
+    //     cs.init(2);
+    // }
+
+    if(document.querySelector(`body.page-id-${pageIds.mixes}`)) {
         const cs = customSlider();
-        cs.init(2);
+        cs.init();
     }
 
-    if(document.querySelector(`body.page-id-${pageIds.location}`)) {
-        const cs = customSlider();
-        cs.init(6);
-    }
-
-    const fs = formStyling();
-    const cl = customLightbox();
+    // const fs = formStyling();
+    // const cl = customLightbox();
     // const sp = splashPage();
 
-    fs.init();
-    cl.init();
+    // fs.init();
+    // cl.init();
     // sp.init();
 
-    document.querySelectorAll('.register-link').forEach(function(el) {
-        el.addEventListener('click', function(e) {
-            e.preventDefault();
-            launchLightbox();
-        });
-    });
+    // document.querySelectorAll('.register-link').forEach(function(el) {
+    //     el.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //         launchLightbox();
+    //     });
+    // });
 
-    document.querySelectorAll('.lightbox-dismiss').forEach(function(el) {
-        el.addEventListener('click', function(e) {
-            e.preventDefault();
-            dismissLightbox();
-        });
-    });
+    // document.querySelectorAll('.lightbox-dismiss').forEach(function(el) {
+    //     el.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //         dismissLightbox();
+    //     });
+    // });
 
     function launchLightbox() {
         var lightboxForm = document.querySelector('#lightboxForm');

@@ -1,13 +1,4 @@
-footer {
-    a {
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-
-            @media (min-width: $tablet) {
-                color: $maroon !important;
-                text-decoration: none;
-            }
-        }
-    }
+.footer-heading h2.fl-heading {
+    max-width: 800px;
+    margin: 0 auto !important;
 }

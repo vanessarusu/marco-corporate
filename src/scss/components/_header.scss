@@ -1,46 +1,356 @@
-#menu-primary-menu {
-    .current-menu-item {
-        a {
-            font-weight: bold;
-            color: $brand-green;
-        }
-    }
-    li {
-        &.fa {
-            border: none;
-            padding: 0;
-            margin: 0;
-            width: 32px;
-            margin: 0 2px;
-            font-size: 0;
-            text-align: center;
+@media (max-width: $desktop) {
+    header {
+        .fl-menu-mobile-flyout {
 
-            &:before {
-                font-family: 'Font Awesome 5 Brands';
-                display: block;
-                opacity: 1;
-                font-size: 20px;
-                pointer-events: none;
+            button.fl-menu-mobile-close {
+                i {
+                    color: white;
+                    font-size: 20px;
+                    padding-left: 20px;
+                    padding-top: 20px;
 
-                position: absolute;
+                }
+            }
+            ul.menu {
+                margin-top: 100px;
+
+                li.menu-item {
+                    padding: 2rem;
+                    text-align: left;
+                    a {
+                        max-width: 90%;
+                    }
+                }
             }
 
-            @media (max-width: 768px) {
-                display: none;
+            ul.sub-menu {
+                margin-top: 20px;
+                li.menu-item {
+                    padding: 2rem 0rem;
+                    text-align: left;
+                }
+            }
+
+            .fl-has-submenu-container {
+                a {
+                    &:after {
+                        content: '+';
+                        display: block;
+                        position: absolute;
+                        right: 8px;
+                        top: 0;
+                    }
+                }
             }
         }
     }
 }
 
-@media (max-width: 768px) {
-    #menu-primary-menu {
-        padding-top: 100px;
+@media (min-width: $desktop) {
+    ul.sub-menu {
+        margin-left: -22px;
+        li {
+            a {
+                border-bottom: 1px solid #707070;
+                transition: all 0.2s ease-in-out;
+                
+                &:hover {
+                    background: black;
+                }
+        
+            }
+
+            &:first-of-type {
+                a {
+                    border-top: 1px solid #707070;
+                }
+            }
+        }
+    }
+
+    .fl-has-submenu-container {
+        + .sub-menu {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 100%;
+            min-width: 100px;
+        }
+    }
+
+    li.custom-solutions-hover {
+        &:after {
+            display: block;
+            position: absolute;
+            right: -22px;
+            bottom: 10px;
+            color: white;
+            font-size: 10.8px;
+            width: 120%;
+            font-weight: 600;
+            opacity: 0;
+        }
+        &:hover {
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    .main-navigation {
+        > .fl-row-content-wrap {
+            padding-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: $desktop) {
+    header {
+        .fl-menu-mobile-flyout {
+
+            ul.sub-menu {
+                li.menu-item {
+                    text-align: left !important;
+                }
+            }
+        }
+    }
+}
+
+// Main Header Styles 
+
+
+
+.main-navigation {
+    box-shadow: 0 10px 20px 0px rgba(0,0,0,0.4);
+    position: relative;
+}
+
+
+#userNav,
+#menu-2023-top-bar-menu {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    gap: 2rem;
+    @media (max-width: $desktop) {
+        gap: 1rem;
+    }
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 0;
+
+    li {
+        list-style: none;
+        a, span {
+            color: white;
+            font-size: 14px;
+
+            @media (max-width: $desktop) {
+                font-size: 14px;
+                line-height: 1;
+            }
+            text-transform: uppercase;
+        }
+    }
+
+    .nav-icon {
+        a {
+            font-size: 0px !important;
+
+            &:after {
+                height: 20px;
+                width: 20px;
+                content: '';
+                display: block;
+                margin-top: -38px;
+                transition: 0.2s ease-in-out;
+            }
+
+            &:hover {
+                &:after {
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        &.facebook a:after {
+            background: url(http://localhost:8888/marco/wp-content/uploads/2023/02/facebook-icon.svg) center center no-repeat;
+            margin-left: 8px;
+        }
+
+        &.instagram a:after {
+            background: url(http://localhost:8888/marco/wp-content/uploads/2023/02/instagram-icon.svg) center center no-repeat;
+        }
+
+        &.twitter a:after {
+            background: url(http://localhost:8888/marco/wp-content/uploads/2023/02/twitter-icon.svg) center center no-repeat;
+        }  
+        
+        @media (max-width: $desktop) {
+            display: none;
+        }
+    }
+}
+
+.navigation-primary {
+    @media (max-width: $desktop) {
+        ul.menu {
+            justify-content: space-between !important;
+            width: 100%;
+            a {
+                padding: 0;
+            }
+        }
+    }
+    ul.menu li a {
+        @media (max-width: $desktop) {
+            padding: 0;
+        }
+    }
+
+    .fl-menu.fl-menu-responsive-toggle-large-mobile {
+        @media (max-width: $desktop) {
+            position: absolute;
+            right: 20px;
+            top: 40px;
+            border: 1px solid white;
+            padding: 20px 28px 16px;
+
+            button {
+                padding: 0;
+            }
+        }
+    }
+}
+
+
+#umbrellaBrands {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 6px;
+    z-index: 100;
+
+    ul {
+        margin: 0;
+        padding: 0;
 
         li {
-            border: none;
+            list-style: none;
+            margin-bottom: 1rem;
+
             a {
-                padding: 20px 10px;
+                color: $white;
+                font-size: 18px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 0.8rem 5rem 0.8rem 8rem;
+                display: block;
+                border-radius: 50px;
+                position: relative;
+                text-align: center;
+                transition: all 0.2s ease-in-out;
+
+                &:before {
+                    content: '';
+                    width: 80px;
+                    height: 55px;
+                    display: block;
+                    position: absolute;
+                    left: -10px;
+                    top: -8px;
+                }
+
+                &:hover {
+                    opacity: 0.6;
+                }
             }
+
+            &.stone {
+                a {
+                    background: #868154;
+
+                    &:before {
+                        background-image: var(--baseball-logo);
+                    }
+                }
+            }
+
+            &.baseball {
+                a {
+                    background: #B32317;
+                    &:before {
+                        background: var(--baseball-logo);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1460px) {
+        right: 1rem;
+        top: 1rem;
+        ul {
+            display: flex;
+            gap: 2rem;
+
+            li {
+                a {
+                    border: 2px solid var(--brand-black);
+                    padding: 0.8rem 5rem 0.4rem 8rem;
+                    font-size: 14px;
+
+                    &:before {
+                        top: -10px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        right: 1rem;
+        top: 0.6rem;
+
+        ul {
+            display: flex;
+            gap: 2rem;
+
+            li.baseball, li.stone {
+                a {
+                    border: 2px solid var(--brand-black);
+                    padding: 0.6rem 2rem 0.4rem 5.5rem;
+                    font-size: 12px;
+
+                    &:before {
+                        top: -10px;
+                        height: 40px;
+                        width: 65px;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}
+
+header {
+    .mobile-show {
+        display: none;
+    
+        @media (max-width: 1460px) {
+            display: block;
+        }
+    }
+    
+    .mobile-hide {
+        @media (max-width: 1460px) {
+            display: none;
         }
     }
 }

@@ -1,44 +1,15 @@
-    // this has been moved to be the inline callback function within the plugin settings
-
 const customSlider = (function () {
-    
-    function init(sliderID) {
-        if(document.querySelector(".fl-builder-edit")) {
-            return;
-        }
 
-        const targetNode = document.querySelector('.n2-section-smartslider');
-        const config = { attributes: true, childList: true, subtree: true };
-
-        const callback = function(mutationList, observer) {
-            for (const mutation of mutationList) {
-                if (mutation.type === 'childList') {
-
-                    if(document.querySelector(`#n2-ss-${sliderID}`)) {
-                        n2ss.ready(sliderID, function(slider, sliderElement) {  
-                            setTimeout(function() {
-                            document.querySelector('.nextend-arrow-previous').insertAdjacentHTML('afterend','<div class="slider-pagination"><span class="current-index"></span><span class="bullet">&bull;</span><span class="slide-length"></span><div>');
-                            document.querySelector(".slide-length").innerHTML = slider.slides.length;
-                            document.querySelector(".current-index").innerHTML = '1';
-                            sliderElement.addEventListener('mainAnimationStart', 
-                            function(e, animation, currentSlideIndex, nextSlideIndex) {     
-                                setTimeout(function() {
-                                    var index = slider.currentSlide.index+1;
-                                    document.querySelector(".current-index").innerHTML = index;
-                                }, 500);
-                            });
-                        }, 0);
-                        });
-
-                        observer.disconnect();
-                    }
-                }
-            }
-        };
-
-        const observer = new MutationObserver(callback);
-
-        observer.observe(targetNode, config);
+    function init() {
+        jQuery(document).ready(function($) {
+            $('.custom-product-slick-slider .mixes-slider').slick({
+                fade: true,
+                arrows: true,
+                cssEase: 'linear',
+                prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+                nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'><span>View More</span></i></button>"
+            });
+        });
     }
 
     return {
